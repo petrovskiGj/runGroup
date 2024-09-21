@@ -2,9 +2,9 @@ name: Lint Code Base and Docker Build
 
 on:
   push:
-    branches: [ "kiii-dockerizations" ] 
+    branches: [ "main" ] 
   pull_request:
-    branches: [ "kiii-dockerizations" ] 
+    branches: [ "main" ] 
 
 jobs:
   run-lint:
