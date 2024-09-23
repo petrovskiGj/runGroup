@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rungroup
+  namespace: my-namespace
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rungroup
+  template:
+    metadata:
+      labels:
+        app: rungroup
+    spec:
+      containers:
+        - name: rungroup
+          image: dzoksy15/backend-image:latest
+          ports:
+            - containerPort: 8080
+          envFrom:
+            - configMapRef:
+                name: app-config
+            - secretRef:
+                name: postgresql-secret
