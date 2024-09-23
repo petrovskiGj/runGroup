@@ -1,7 +1,7 @@
 version: '3'
 services:
   backend:
-    image: myapp-backend
+    image: backend-image
     build:
       context: .
     ports:
